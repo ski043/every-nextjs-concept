@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   keywords: ["todo", "task management", "productivity"],
 };
 
+export const revalidate = 3600; // invalidate every hour
+
 async function getTodos() {
   const todos = await prisma.todo.findMany();
   return todos;

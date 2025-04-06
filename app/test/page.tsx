@@ -1,11 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
+export const revalidate = 3600; // invalidate every hour
+
 async function getItemsError() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todossss/1");
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   if (!res.ok) {
     throw new Error("Failed to fetch items");
   }
-  return res.json();
+
+  const data = await res.json();
+  return data;
 }
 
 const TestPage = async () => {
