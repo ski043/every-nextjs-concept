@@ -1,6 +1,13 @@
 import { getUsers } from "@/app/data/user/get-users";
 import Link from "next/link";
 import React, { Suspense } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Users | Dashboard",
+  description: "View and manage all users in the system",
+  keywords: ["users", "user management", "dashboard", "admin"],
+};
 
 const UsersPage = () => {
   return (

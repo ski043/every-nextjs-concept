@@ -2,6 +2,13 @@ import { prisma } from "@/app/utils/db";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 import TodoForm from "./TodoForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Todo Creation | Dashboard",
+  description: "Create and manage your todo items in this dashboard",
+  keywords: ["todo", "task management", "productivity"],
+};
 
 async function getTodos() {
   const todos = await prisma.todo.findMany();
